@@ -1,108 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Complete Purchase</title>
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
-  <link rel="stylesheet" href="buy.css">
-</head>
-<body>
-  <header>
-    <nav class="navbar">
-      <div class="navdiv">
-        <div class="logo"><a href="index.html">RENTAL</a></div>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="collection.html">Collection</a></li>
-          <li><a href="booking.html">Booking</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complete Purchase</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="buy.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="navdiv">
+          <div class="logo"><a href="index.html">RENTAL</a></div>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="collection.html">Collection</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
 
-  <main class="purchase-container">
-    <h2>Complete Your Purchase</h2>
-    <div id="selected-car" class="selected-car"></div>
+    <main class="purchase-container">
+      <h2>Complete Your Purchase.</h2>
+      <div id="selected-car" class="selected-car"></div>
 
-    <form id="purchase-form">
-      <div class="form-group">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" required>
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" required>
-      </div>
-      <div class="form-group">
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" required>
-      </div>
-      <div class="form-group">
-        <label for="address">Delivery Address</label>
-        <input type="text" id="address" required>
-      </div>
+      <form id="purchase-form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" required />
+        </div>
+        <div class="form-group">
+          <label for="address">Delivery Address</label>
+          <input type="text" id="address" required />
+        </div>
 
-      <button type="submit" class="btn">Confirm Purchase</button>
-    </form>
-  </main>
+        <button type="submit" class="btn">Confirm Purchase</button>
+      </form>
+    </main>
 
-  <!-- Confirmation Modal -->
-  <div id="confirmation-modal" class="modal">
-    <div class="modal-content">
-      <h3 id="modal-title">Purchase Confirmed!</h3>
-      <p id="modal-message"></p>
-      <button class="btn" id="modal-close">Return to Home</button>
+    <!-- Confirmation Modal -->
+    <div id="confirmation-modal" class="modal">
+      <div class="modal-content">
+        <h3 id="modal-title">Purchase Confirmed!</h3>
+        <p id="modal-message"></p>
+        <button class="btn" id="modal-close">Return to Home</button>
+      </div>
     </div>
-  </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const car = JSON.parse(localStorage.getItem('selectedCar'));
-      const purchaseForm = document.getElementById('purchase-form');
-      const modal = document.getElementById('confirmation-modal');
-      const modalTitle = document.getElementById('modal-title');
-      const modalMessage = document.getElementById('modal-message');
-      const modalClose = document.getElementById('modal-close');
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const car = JSON.parse(localStorage.getItem("selectedCar"));
+        const purchaseForm = document.getElementById("purchase-form");
+        const modal = document.getElementById("confirmation-modal");
+        const modalTitle = document.getElementById("modal-title");
+        const modalMessage = document.getElementById("modal-message");
+        const modalClose = document.getElementById("modal-close");
 
-      if (car) {
-        document.getElementById('selected-car').innerHTML = `
+        if (car) {
+          document.getElementById("selected-car").innerHTML = `
           <img src="${car.image}" alt="${car.name}">
           <h3>${car.name}</h3>
           <p>${car.price}</p>
-          <p>${car.specs || ''}</p>
+          <p>${car.specs || ""}</p>
         `;
-      } else {
-        window.location.href = 'index.html';
-      }
-
-      purchaseForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-
-        if (!name || !email) {
-          alert('Please fill in all required fields');
-          return;
+        } else {
+          window.location.href = "index.html";
         }
 
-        modalMessage.textContent = `Thank you, ${name}! Your purchase of the ${car.name} has been confirmed. A receipt has been sent to ${email}.`;
-        modal.style.display = 'flex';
-      });
+        purchaseForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
 
-      modalClose.addEventListener('click', function() {
-        localStorage.removeItem('selectedCar');
-        window.location.href = 'index.html';
-      });
+          if (!name || !email) {
+            alert("Please fill in all required fields");
+            return;
+          }
 
-      window.addEventListener('click', function(e) {
-        if (e.target === modal) {
-          localStorage.removeItem('selectedCar');
-          window.location.href = 'index.html';
-        }
+          modalMessage.textContent = `Thank you, ${name}! Your purchase of the ${car.name} has been confirmed. A receipt has been sent to ${email}.`;
+          modal.style.display = "flex";
+        });
+
+        modalClose.addEventListener("click", function () {
+          localStorage.removeItem("selectedCar");
+          window.location.href = "index.html";
+        });
+
+        window.addEventListener("click", function (e) {
+          if (e.target === modal) {
+            localStorage.removeItem("selectedCar");
+            window.location.href = "index.html";
+          }
+        });
       });
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>
