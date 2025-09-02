@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Rent Date</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navdiv">
+                <div class="logo"><a href="#">CAR RENTAL</a></div>
+                <ul class="nav_links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="rent.html">Rent Date</a></li>
+                    <li><a href="collection.html">Cars</a></li>
+                    <li><a href="payment.html">Payment</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+
+    
+    <!-- Date Picker -->
+    <section class="rent-date">
+        <div class="rent-date-container">
+            <h2>Plan Your Rental Experience</h2>
+            <p class="section-subtitle">Select your preferred dates to check vehicle availability</p>
+            
+            <div class="date-picker-container">
+                <div class="date-input-group">
+                    <div class="date-field">
+                        <label for="pickup-date">
+                            <i class="ri-calendar-2-fill"></i>
+                            Pick-up Date
+                        </label>
+                        <input type="date" id="pickup-date" name="pickup-date">
+                    </div>
+                    
+                    <div class="date-field">
+                        <label for="end-date">
+                            <i class="ri-calendar-2-fill"></i>
+                            Return Date
+                        </label>
+                        <input type="date" id="end-date" name="end-date">
+                    </div>
+                </div>
+                
+                <div class="duration-display">
+                    <span id="rental-duration">0 days</span>
+                    <span class="duration-label">Total Rental Period</span>
+                </div>
+
+                <p id="total-price">Total: $0</p>
+                
+                <button class="btn btn-primary" id="check-availability">
+                    <i class="ri-search-line"></i>
+                    Check Availability
+                </button>
+            </div>
+            
+            <div id="date-error" class="error-message"></div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        // Load booking data from localStorage
+        const booking = JSON.parse(localStorage.getItem('booking'));
+
+        if (booking) {
+            document.getElementById('selected-car-info').style.display = 'block';
+            document.getElementById('selected-car-image').src = booking.carImage;
+            document.getElementById('selected-car-name').textContent = booking.carName;
+            document.getElementById('selected-car-price').textContent = booking.carPrice;
+            document.getElementById('selected-car-specs').textContent = booking.carSpecs;
+        }
+
+        // Date logic
+        const pickupInput = document.getElementById('pickup-date');
+        const returnInput = document.getElementById('end-date');
+        const durationDisplay = document.getElementById('rental-duration');
+        const errorMessage = document.getElementById('date-error');
+        const totalPriceElement = document.getElementById('total-price');
+
+        function calculateTotal() {
+            const pickupDate = new Date(pickupInput.value);
+            const returnDate = new Date(returnInput.value);
+
+            if (!isNaN(pickupDate) && !isNaN(returnDate) && returnDate >= pickupDate) {
+                const days = Math.ceil((returnDate - pickupDate) / (1000 * 60 * 60 * 24)) + 1; 
+                const pricePerDay = parseInt(booking.carPrice.replace(/\D/g, ''), 10);
+                const total = days * pricePerDay;
+
+                durationDisplay.textContent = `${days} days`;
+                totalPriceElement.textContent = `Total: $${total}`;
+                errorMessage.textContent = "";
+
+                booking.totalPrice = `$${total}`;
+                booking.pickupDate = pickupInput.value;
+                booking.endDate = returnInput.value;
+                localStorage.setItem('booking', JSON.stringify(booking));
+            } else {
+                durationDisplay.textContent = "0 days";
+                totalPriceElement.textContent = "Total: $0";
+                errorMessage.textContent = "⚠️ Please select valid dates.";
+            }
+        }
+
+        pickupInput.addEventListener('change', calculateTotal);
+        returnInput.addEventListener('change', calculateTotal);
+    </script>
+</body>
+</html>
