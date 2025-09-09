@@ -1,219 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collection</title>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="collection.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Collection</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="collection.css" />
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="navdiv">
-                <div class="logo"><a href="">CAR RENTAL</a></div>
-                <ul class="nav_links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="rent.html">Rent Date</a></li>
-                    <li><a href="collection.html">Cars</a></li>
-                    <li><a href="payment.html">Payment</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    
-    <section class="car-grid" id="cars">
-        <h2>Our    Premium Car Collection</h2>
-        <div class="filter-buttons">
-            <button class="filter-btn active" data-category="all">All Cars</button>
-            <button class="filter-btn" data-category="sports">Sports</button>
-            <button class="filter-btn" data-category="electric">Electric</button>
-            <button class="filter-btn" data-category="suvs">SUVs</button>
-            <button class="filter-btn" data-category="vans">Vans</button>
-            <button class="filter-btn" data-category="buses">Buses</button>
+  <header>
+    <nav class="navbar">
+      <div class="navdiv">
+        <div class="logo"><a href="">YOUR BEST CAR DEALS</a></div>
+        <ul class="nav_links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rent.html">Rent Date</a></li>
+          <li><a href="collection.html">Cars</a></li>
+          <li><a href="payment.html">Payment</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <section class="car-grid" id="cars">
+    <h2>Our Premium Car Collection</h2>
+
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-category="all">All Cars</button>
+      <button class="filter-btn" data-category="sports">Sports</button>
+      <button class="filter-btn" data-category="electric">Electric</button>
+      <button class="filter-btn" data-category="suvs">SUVs</button>
+      <button class="filter-btn" data-category="vans">Vans</button>
+      <button class="filter-btn" data-category="buses">Buses</button>
+    </div>
+
+    <div class="grid-container">
+      <!-- Sports Cars -->
+      <div class="car-card" data-category="sports">
+        <img src="assets/Porsche-911-GT3-RS-1.jpg" alt="Porsche 911 GT3 RS" />
+        <div class="car-info">
+          <h3>Porsche 911 GT3 RS</h3>
+          <p class="price">$350/day</p>
+          <p class="specs">4.0L Flat-6 • 518HP • PDK • 2 Seats</p>
+          <div class="action-buttons">
+            <button class="btn rent-btn">Rent Now</button>
+            <button class="btn buy-btn">Buy Now</button>
+          </div>
         </div>
-        <div class="grid-container">
-            <!-- Sports Cars -->
-            <div class="car-card" data-category="sports">
-                <img src="assets/Porsche-911-GT3-RS-1.jpg" alt="Porsche 911 GT3 RS">
-                <div class="car-info">
-                    <h3>Porsche 911 GT3 RS</h3>
-                    <p class="price">$350/day</p>
-                    <p class="specs">4.0L Flat-6 • 518HP • PDK • 2 Seats</p>
-                    <div class="action-buttons">
-                        <button class="btn rent-btn">Rent Now</button>
-                        <button class="btn buy-btn">Buy Now</button>
-                    </div>
-                </div>
-            </div>
-            <div class="car-card" data-category="sports">
-                <img src="assets/2019-Lamborghini-Huracan-EVO-16.avif" alt="Lamborghini Huracan">
-                <div class="car-info">
-                    <h3>Lamborghini Huracan EVO</h3>
-                    <p class="price">$450/day</p>
-                    <p class="specs">5.2L V10 • 640HP • AWD • 2 Seats</p>
-                    <div class="action-buttons">
-                        <button class="btn rent-btn">Rent Now</button>
-                        <button class="btn buy-btn">Buy Now</button>
-                    </div>
-                </div>
-            </div>
-            <div class="car-card" data-category="sports">
-                <img src="assets/AMG GT 63 PRO.jpeg" alt="Ferrari 488 GTB">
-                <div class="car-info">
-                    <h3>AMG GT 63 PRO COUPE</h3>
-                    <p class="price">$400/day</p>
-                    <p class="specs">3.9L V8 • 661HP • 7-Speed DCT • 2 Seats</p>
-                    <div class="action-buttons">
-                        <button class="btn rent-btn">Rent Now</button>
-                        <button class="btn buy-btn">Buy Now</button>
-                    </div>
-                </div>
-            </div>
-            <div class="car-card" data-category="sports">
-                <img src="assets/mclaren-720s.avif" alt="McLaren 720S">
-                <div class="car-info">
-                    <h3>McLaren 720S</h3>
-                    <p class="price">$420/day</p>
-                    <p class="specs">4.0L V8 • 710HP • 7-Speed DCT • 2 Seats</p>
-                    <div class="action-buttons">
-                        <button class="btn rent-btn">Rent Now</button>
-                        <button class="btn buy-btn">Buy Now</button>
-                    </div>
-                </div>
-            </div>
+      </div>
 
-            <!-- Electric Cars -->
-            <div class="car-card" data-category="electric">
-                <img src="assets/tesla-model-S.jpg" alt="Tesla Model S Plaid">
-                <div class="car-info">
-                    <h3>Tesla Model S Plaid</h3>
-                    <p class="price">$200/day</p>
-                    <p class="specs">1,020HP • 396mi Range • 5 Seats</p>
-                    <div class="action-buttons">
-                        <button class="btn rent-btn">Rent Now</button>
-                        <button class="btn buy-btn">Buy Now</button>
-                    </div>
-                </div>
-            </div>
-            <div class="car-card" data-category="electric">
-                <img src="assets/porche-taycan-ev-fire-2-1663745840.jpg" alt="Porsche Taycan Turbo S">
-                <div class="car-info">
-                    <h3>Porsche Taycan Turbo S</h3>
-                    <p class="price">$280/day</p>
-                    <p class="specs">750HP • 227mi Range • 4 Seats</p>
-                    <div class="action-buttons">
-                        <button class="btn rent-btn">Rent Now</button>
-                        <button class="btn buy-btn">Buy Now</button>
-                    </div>
-                </div>
-            </div>
-            <div class="car-card" data-category="electric">
-                <img src="assets/range-4.jpg" alt="Audi e-tron GT">
-                <div class="car-info">
-                    <h3>Audi e-tron GT</h3>
-                    <p class="price">$220/day</p>
-                    <p class="specs">522HP • 238mi Range • 4 Seats</p>
-                    <div class="action-buttons">
-                        <button class="btn rent-btn">Rent Now</button>
-                        <button class="btn buy-btn">Buy Now</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- SUVs -->
-            <div class="car-card" data-category="suvs">
-                <img src="assets/Range Rover sport.jpeg" alt="Range Rover Autobiography">
-                <div class="car-info">
-                    <h3>Range Rover Autobiography</h3>
-                    <p class="price">$180/day</p>
-                    <p class="specs">4.4L V8 • 523HP • 5 Seats</p>
-                    <div class="action-buttons">
-                        <button class="btn rent-btn">Rent Now</button>
-                        <button class="btn buy-btn">Buy Now</button>
-                    </div>
-                </div>
-            </div>
-            <div class="car-card" data-category="suvs">
-                <img src="assets/AMG G63.jpeg" alt="Mercedes G63 AMG">
-                <div class="car-info">
-                    <h3>Mercedes G63 AMG</h3>
-                    <p class="price">$250/day</p>
-                    <p class="specs">4.0L V8 • 577HP • 5 Seats</p>
-                    <div class="action-buttons">
-                        <button class="btn rent-btn">Rent Now</button>
-                        <button class="btn buy-btn">Buy Now</button>
-                    </div>
-                </div>
-            </div>
-            <div class="car-card" data-category="suvs">
-                <img src="assets/Lamborghini-Urus-G-Power.jpg" alt="Lamborghini Urus">
-                <div class="car-info">
-                    <h3>Lamborghini Urus</h3>
-                    <p class="price">$350/day</p>
-                    <p class="specs">4.0L V8 • 641HP • 5 Seats</p>
-                    <div class="action-buttons">
-                        <button class="btn rent-btn">Rent Now</button>
-                        <button class="btn buy-btn">Buy Now</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Vans -->
-            <div class="car-card" data-category="vans">
-                <img src="assets/Mercedes sprinter luxury.jpg" alt="Mercedes Sprinter Luxury">
-                <div class="car-info">
-                    <h3>Mercedes Sprinter Luxury</h3>
-                    <p class="price">$150/day</p>
-                    <p class="specs">3.0L V6 • 12 Seats • Executive Lounge</p>
-                    <div class="action-buttons">
-                        <button class="btn rent-btn">Rent Now</button>
-                        <button class="btn buy-btn">Buy Now</button>
-                    </div>
-                </div>
-            </div>
-            <div class="car-card" data-category="vans">
-                <img src="assets/All-new-Ford-Transit-Custom.jpg" alt="Ford Transit Custom">
-                <div class="car-info">
-                    <h3>Ford Transit Custom</h3>
-                    <p class="price">$100/day</p>
-                    <p class="specs">2.0L EcoBlue • 8 Seats • Premium Pack</p>
-                    <div class="action-buttons">
-                        <button class="btn rent-btn">Rent Now</button>
-                        <button class="btn buy-btn">Buy Now</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Buses -->
-            <div class="car-card" data-category="buses">
-                <img src="assets/Electric-bus.webp" alt="Volvo Premium Coach">
-                <div class="car-info">
-                    <h3>Volvo Premium Coach</h3>
-                    <p class="price">$300/day</p>
-                    <p class="specs">46 Seats • WiFi • Entertainment System</p>
-                    <div class="action-buttons">
-                        <button class="btn rent-btn">Rent Now</button>
-                        <button class="btn buy-btn">Buy Now</button>
-                    </div>
-                </div>
-            </div>
-            <div class="car-card" data-category="buses">
-                <img src="assets/Mercedes-Benz-Tourismo.jpg" alt="Mercedes Tourismo">
-                <div class="car-info">
-                    <h3>Mercedes Tourismo</h3>
-                    <p class="price">$280/day</p>
-                    <p class="specs">52 Seats • AC • Reclining Seats</p>
-                    <div class="action-buttons">
-                        <button class="btn rent-btn">Rent Now</button>
-                        <button class="btn buy-btn">Buy Now</button>
-                    </div>
-                </div>
-            </div>
+      <div class="car-card" data-category="sports">
+        <img src="assets/Cars/car.jpg" alt="Morgan Supersport" />
+        <div class="car-info">
+          <h3>Morgan Supersport</h3>
+          <p class="condition">BRAND NEW - IN STOCK</p>
+          <p class="condition">50 miles • Automatic • Petrol</p>
+          <p class="specs">4.0L Flat-6 • 518HP • PDK • 2 Seats</p>
+          <div class="action-buttons">
+            <button class="btn rent-btn">Rent Now $500/ per day</button>
+            <button class="btn buy-btn">Buy Now going for $53,000</button>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <script src="script.js"></script>
+      <div class="car-card" data-category="sports">
+        <img src="assets/2019-Lamborghini-Huracan-EVO-16.avif" alt="Lamborghini Huracan EVO" />
+        <div class="car-info">
+          <h3>Lamborghini Huracan EVO</h3>
+          <p class="price">$450/day</p>
+          <p class="specs">5.2L V10 • 640HP • AWD • 2 Seats</p>
+          <div class="action-buttons">
+            <button class="btn rent-btn">Rent Now</button>
+            <button class="btn buy-btn">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="car-card" data-category="sports">
+        <img src="assets/AMG GT 63 PRO.jpeg" alt="AMG GT 63 PRO Coupe" />
+        <div class="car-info">
+          <h3>AMG GT 63 PRO COUPE</h3>
+          <p class="price">$400/day</p>
+          <p class="specs">3.9L V8 • 661HP • 7-Speed DCT • 2 Seats</p>
+          <div class="action-buttons">
+            <button class="btn rent-btn">Rent Now</button>
+            <button class="btn buy-btn">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="car-card" data-category="sports">
+        <img src="assets/mclaren-720s.avif" alt="McLaren 720S" />
+        <div class="car-info">
+          <h3>McLaren 720S</h3>
+          <p class="price">$420/day</p>
+          <p class="specs">4.0L V8 • 710HP • 7-Speed DCT • 2 Seats</p>
+          <div class="action-buttons">
+            <button class="btn rent-btn">Rent Now</button>
+            <button class="btn buy-btn">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Electric Cars -->
+      <div class="car-card" data-category="electric">
+        <img src="assets/tesla-model-S.jpg" alt="Tesla Model S Plaid" />
+        <div class="car-info">
+          <h3>Tesla Model S Plaid</h3>
+          <p class="price">$200/day</p>
+          <p class="specs">1,020HP • 396mi Range • 5 Seats</p>
+          <div class="action-buttons">
+            <button class="btn rent-btn">Rent Now</button>
+            <button class="btn buy-btn">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="car-card" data-category="electric">
+        <img src="assets/porche-taycan-ev-fire-2-1663745840.jpg" alt="Porsche Taycan Turbo S" />
+        <div class="car-info">
+          <h3>Porsche Taycan Turbo S</h3>
+          <p class="price">$280/day</p>
+          <p class="specs">750HP • 227mi Range • 4 Seats</p>
+          <div class="action-buttons">
+            <button class="btn rent-btn">Rent Now</button>
+            <button class="btn buy-btn">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="car-card" data-category="electric">
+        <img src="assets/range-4.jpg" alt="Audi e-tron GT" />
+        <div class="car-info">
+          <h3>Audi e-tron GT</h3>
+          <p class="price">$220/day</p>
+          <p class="specs">522HP • 238mi Range • 4 Seats</p>
+          <div class="action-buttons">
+            <button class="btn rent-btn">Rent Now</button>
+            <button class="btn buy-btn">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUVs -->
+      <div class="car-card" data-category="suvs">
+        <img src="assets/Range Rover sport.jpeg" alt="Range Rover Autobiography" />
+        <div class="car-info">
+          <h3>Range Rover Autobiography</h3>
+          <p class="price">$180/day</p>
+          <p class="specs">4.4L V8 • 523HP • 5 Seats</p>
+          <div class="action-buttons">
+            <button class="btn rent-btn">Rent Now</button>
+            <button class="btn buy-btn">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="car-card" data-category="suvs">
+        <img src="assets/AMG G63.jpeg" alt="Mercedes G63 AMG" />
+        <div class="car-info">
+          <h3>Mercedes G63 AMG</h3>
+          <p class="price">$250/day <br> $34,000 sells</p>
+          <p class="specs">4.0L V8 • 577HP • 5 Seats</p>
+          <div class="action-buttons">
+            <button class="btn rent-btn">Rent Now</button>
+            <button class="btn buy-btn">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="car-card" data-category="suvs">
+        <img src="assets/Lamborghini-Urus-G-Power.jpg" alt="Lamborghini Urus" />
+        <div class="car-info">
+          <h3>Lamborghini Urus</h3>
+          <p class="price">$350/day</p>
+          <p class="specs">4.0L V8 • 641HP • 5 Seats</p>
+          <div class="action-buttons">
+            <button class="btn rent-btn">Rent Now</button>
+            <button class="btn buy-btn">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vans -->
+      <div class="car-card" data-category="vans">
+        <img src="assets/Mercedes sprinter luxury.jpg" alt="Mercedes Sprinter Luxury" />
+        <div class="car-info">
+          <h3>Mercedes Sprinter Luxury</h3>
+          <p class="price">$150/day</p>
+          <p class="specs">3.0L V6 • 12 Seats • Executive Lounge</p>
+          <div class="action-buttons">
+            <button class="btn rent-btn">Rent Now</button>
+            <button class="btn buy-btn">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="car-card" data-category="vans">
+        <img src="assets/All-new-Ford-Transit-Custom.jpg" alt="Ford Transit Custom" />
+        <div class="car-info">
+          <h3>Ford Transit Custom</h3>
+          <p class="price">$100/day</p>
+          <p class="specs">2.0L EcoBlue • 8 Seats • Premium Pack</p>
+          <div class="action-buttons">
+            <button class="btn rent-btn">Rent Now</button>
+            <button class="btn buy-btn">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Buses -->
+      <div class="car-card" data-category="buses">
+        <img src="assets/Electric-bus.webp" alt="Volvo Premium Coach" />
+        <div class="car-info">
+          <h3>Volvo Premium Coach</h3>
+          <p class="price">$300/day</p>
+          <p class="specs">46 Seats • WiFi • Entertainment System</p>
+          <div class="action-buttons">
+            <button class="btn rent-btn">Rent Now</button>
+            <button class="btn buy-btn">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="car-card" data-category="buses">
+        <img src="assets/Mercedes-Benz-Tourismo.jpg" alt="Mercedes Tourismo" />
+        <div class="car-info">
+          <h3>Mercedes Tourismo</h3>
+          <p class="price">$280/day</p>
+          <p class="specs">52 Seats • AC • Reclining Seats</p>
+          <div class="action-buttons">
+            <button class="btn rent-btn">Rent Now</button>
+            <button class="btn buy-btn">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="car-card" data-category="buses">
+        <img src="assets/Cars/car.jpg" alt="Mercedes Tourismo (Alt Image)" />
+        <div class="car-info">
+          <h3>Mercedes Tourismo</h3>
+          <p class="price">$280/day</p>
+          <p class="specs">52 Seats • AC • Reclining Seats</p>
+          <div class="action-buttons">
+            <button class="btn rent-btn">Rent Now</button>
+            <button class="btn buy-btn">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="script.js"></script>
 </body>
 </html>
