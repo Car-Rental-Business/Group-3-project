@@ -1,28 +1,40 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: auth/login.php?redirect=booking.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="payment.css">
+    <link rel="stylesheet" href="css/payment.css">
     <title>Secure Payment</title>
 </head>
 <body>
-
-    <header>
-        <nav class="navbar">
-            <div class="navdiv">
-                <div class="logo"><a href="">CAR RENTAL</a></div>
-                <ul class="nav_links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="rent.html">Rent Date</a></li>
-                    <li><a href="collection.html">Cars</a></li>
-                    <li><a href="payment.html">Payment</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+     <header>
+            <div class="navbar">
+                <div class="navdiv">
+                    <div class="logo"><a href="index.php">RENTAL</a></div>
+                    <ul class="nav_links">
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="rent.html">Rent Date</a></li>
+                        <li><a href="collection.html">Cars</a></li>
+                        <li><a href="payment.php">Payment</a></li>
+                        <?php if (isset($_SESSION['username'])): ?>
+                            <li><a href="auth/logout.php">Logout</a></li>
+                        <?php else: ?>
+                            <li><a href="auth/login.php">Login</a></li>
+                            <li><a href="auth/signup.php">Signup</a></li>
+                        <?php endif; ?>
+                    </ul>
+                </div>
+            </div>            
+        </header>
     
     <!-- Modern Payment Section -->
     <section id="payment">

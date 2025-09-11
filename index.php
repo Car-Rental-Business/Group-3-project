@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en"></html>
 <head>
@@ -5,25 +9,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Car Rentals</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
    <body>
     <!-- Header/Navbar -->
-    <header>
-        <nav class="navbar">
-            <div class="navdiv">
-                <div class="logo"><a href="#">CAR RENTAL</a></div>
-                <ul class="nav_links">
-                    <li><a href="#" class="btn">Home</a></li>
-                    <li><a href="rent.html">Rent Date</a></li>
-                    <li><a href="collection.html">Cars</a></li>
-                    <li><a href="payment.html">Payment</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+        <header>
+            <div class="navbar">
+                <div class="navdiv">
+                    <div class="logo"><a href="index.php">RENTAL</a></div>
+                    <ul class="nav_links">
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="rent.php">Rent Date</a></li>
+                        <li><a href="collection.php">Cars</a></li>
+                        <li><a href="payment.php">Payment</a></li>
+                        <?php if (isset($_SESSION['username'])): ?>
+                            <li><a href="auth/logout.php">Logout</a></li>
+                        <?php else: ?>
+                            <li><a href="auth/login.php">Login</a></li>
+                            <li><a href="auth/signup.php">Signup</a></li>
+                        <?php endif; ?>
+                    </ul>
+                </div>
             </div>
-        </nav>
-    </header>
-
+        </header>
     <main>
         <section class="hero-section">
             <div class="video-background">
@@ -34,7 +42,7 @@
             </div>
             <div class="video-overlay"></div>
             <div class="hero-content">
-                <h1>Welcome to My Car Rentals</h1>
+                <h1>Welcome to Our Car Rentals</h1>
                 <h3>Get the best car rental deals on the web</h3>
                 <div class="about">
                     <p>We offer a wide range of vehicles, including luxury cars, sports cars, and economy cars.</p>
