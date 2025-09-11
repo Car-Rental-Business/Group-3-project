@@ -105,7 +105,7 @@ document.querySelectorAll('.buy-btn, .rent-btn').forEach(button => {
             e.preventDefault();
             alert('Payment successful!');
             localStorage.removeItem('booking');
-            window.location.href = "index.html";
+            window.location.href = "index.php";
         });
 
 // In your existing rent button event listener:
